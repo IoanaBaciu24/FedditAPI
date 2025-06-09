@@ -32,4 +32,5 @@ jobs:
 
     - name: Run tests
       run: |
+        poetry run python -c "import nltk; nltk.download('vader_lexicon')"
         poetry run pytest

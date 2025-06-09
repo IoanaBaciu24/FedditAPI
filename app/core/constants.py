@@ -12,3 +12,13 @@ class FEDDIT:
     LIMIT = "limit"
     SKIP = "skip"
     COMMENTS = "comments"
+
+
+class SENTIMENT:
+    POSITIVE = "positive"
+    NEGATIVE = "negative"
+
+    ID = "id"
+    TEXT = "text"
+    SENTIMENT = "sentiment"
+    SCORE = "score"
