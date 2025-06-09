@@ -13,7 +13,7 @@ COPY pyproject.toml ./
 COPY app ./app
 COPY config ./config
 
-RUN poetry install --no-root --only main
+RUN poetry install --no-root --without dev
 
 RUN poetry run python -c "import nltk; nltk.download('vader_lexicon')"
 

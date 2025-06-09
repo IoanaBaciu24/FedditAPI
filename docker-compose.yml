@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: .         # 👈 use root as context
+      dockerfile: Dockerfile  # optional (default is "Dockerfile")
+    ports:
+      - "8000:8000"
+    depends_on:
+      - feddit
+    environment:
+      - FEDDIT_API_URL=http://feddit:8080
