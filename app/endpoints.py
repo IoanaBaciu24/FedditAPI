@@ -39,9 +39,13 @@ async def get_comments_from_id(id: str, config: Config, skip: int = 0, limit: in
         list: A list of comments associated with the subfeddit ID.
     """
     async with httpx.AsyncClient() as client:
-        response = await client.get(
-            f"{config[CONF.BASE_URL]}/{config[CONF.COMMENTS]}/?{FEDDIT.SUBFEDDIT_ID}={id}&{FEDDIT.LIMIT}={limit}&{FEDDIT.SKIP}={skip}"
+        url = (
+            f"{config[CONF.BASE_URL]}/{config[CONF.COMMENTS]}/"
+            f"?{FEDDIT.SUBFEDDIT_ID}={id}"
+            f"&{FEDDIT.LIMIT}={limit}"
+            f"&{FEDDIT.SKIP}={skip}"
         )
+        response = await client.get(url)
         response.raise_for_status()
         data = response.json()
         return data[FEDDIT.COMMENTS]
