@@ -7,7 +7,6 @@ from app.core.config import Config
 
 @pytest.fixture
 def sample_config_file():
-    # Create a temporary YAML config file
     config_data = {
         "BASE_URL": "https://example.com",
         "SUBFEDDITS": "subfeddits",

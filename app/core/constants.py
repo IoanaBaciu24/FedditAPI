@@ -12,6 +12,7 @@ class FEDDIT:
     LIMIT = "limit"
     SKIP = "skip"
     COMMENTS = "comments"
+    SUBFEDDITS = "subfeddits"
 
 
 class SENTIMENT:

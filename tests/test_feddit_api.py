@@ -15,10 +15,12 @@ def config():
 
 @pytest.mark.asyncio
 async def test_get_id_for_subfeddit_title_found(config):
-    mock_data = [
-        {FEDDIT.ID: "1", FEDDIT.TITLE: "funny"},
-        {FEDDIT.ID: "2", FEDDIT.TITLE: "news"},
-    ]
+    mock_data = {
+        FEDDIT.SUBFEDDITS: [
+            {FEDDIT.ID: "1", FEDDIT.TITLE: "funny"},
+            {FEDDIT.ID: "2", FEDDIT.TITLE: "news"},
+        ]
+    }
 
     with patch(
         "httpx.AsyncClient.get",
@@ -34,9 +36,11 @@ async def test_get_id_for_subfeddit_title_found(config):
 
 @pytest.mark.asyncio
 async def test_get_id_for_subfeddit_title_not_found(config):
-    mock_data = [
-        {FEDDIT.ID: "1", FEDDIT.TITLE: "funny"},
-    ]
+    mock_data = {
+        FEDDIT.SUBFEDDITS: [
+            {FEDDIT.ID: "1", FEDDIT.TITLE: "funny"},
+        ]
+    }
 
     with patch(
         "httpx.AsyncClient.get",

@@ -12,7 +12,7 @@ class Config:
         data (Dict[str, Any]): The parsed YAML content.
     """
 
-    def __init__(self, config_path: str = "config.yaml"):
+    def __init__(self, config_path: str = "./config/config.yaml"):
         """
         Initializes the Config object and loads the configuration data.
 

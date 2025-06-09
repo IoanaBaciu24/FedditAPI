@@ -16,12 +16,12 @@ async def get_id_for_subfeddit_title(title: str, config: Config) -> str:
     """
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{config[CONF.BASE_URL]}/{config[CONF.SUBFEDDITS]}"
+            f"{config[CONF.BASE_URL]}/{config[CONF.SUBFEDDITS]}/"
         )
         response.raise_for_status()
         data = response.json()
         return next(
-            (item[FEDDIT.ID] for item in data if item[FEDDIT.TITLE] == title), None
+            (item[FEDDIT.ID] for item in data[FEDDIT.SUBFEDDITS] if item[FEDDIT.TITLE] == title), None
         )
 
 
