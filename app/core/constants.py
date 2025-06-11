@@ -14,6 +14,9 @@ class FEDDIT:
     COMMENTS = "comments"
     SUBFEDDITS = "subfeddits"
 
+    TEXT = "text"
+    TIMESTAMP = "created_at"
+
 
 class SENTIMENT:
     POSITIVE = "positive"
