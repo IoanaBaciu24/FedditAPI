@@ -28,7 +28,12 @@ async def test_analyze_endpoint(mock_get_id, mock_get_comments):
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as async_client:
         response = await async_client.get(
-            "/analyze?title=funny&limit=2&sort_by_score=true&start_date=2023-09-26&end_date=2023-09-28"
+            "/analyze?"
+            "title=funny&"
+            "limit=2&"
+            "sort_by_score=true&"
+            "start_date=2023-09-26&"
+            "end_date=2023-09-28"
         )
 
     assert response.status_code == status.HTTP_200_OK
